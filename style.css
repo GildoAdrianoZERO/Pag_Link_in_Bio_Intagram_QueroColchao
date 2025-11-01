@@ -1,0 +1,94 @@
+/* --- Reset Básico e Configurações Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fe9128;
+    color: #f0f0f0;
+    
+    /* Centraliza todo o conteúdo na tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Container Principal --- */
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Espaçamento vertical entre os elementos */
+    opacity: 0; /* Começa invisível para animação JS */
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+}
+
+/* Animação de entrada via JS */
+.container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.logo-image {
+  width: 80px;        /* ajuste aqui (pode ser 60px, 70px, 100px...) */
+  height: auto;       /* mantém proporção */
+  display: block;
+  margin: 0 auto 1rem; /* centraliza */
+}
+
+
+
+/* --- Título de Boas-vindas --- */
+.welcome-title {
+    font-size: 1.5rem; /* Tamanho ajustado para o novo texto */
+    font-weight: 500;
+    color: #ffffff;
+}
+
+/* --- Container dos Botões --- */
+.action-buttons {
+    display: flex;
+    flex-direction: column; /* ALTERAÇÃO PRINCIPAL: Empilha os botões verticalmente */
+    align-items: center; /* Garante que os botões fiquem alinhados ao centro */
+    gap: 1rem; /* Espaçamento entre os botões */
+    width: 100%;
+}
+
+/* --- Estilo dos Botões --- */
+.btn {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 50px; /* Cantos levemente arredondados */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo do botão */
+    gap: 10px; /* Espaço entre o ícone e o texto */
+    
+    width: 100%; /* Faz os botões ocuparem a largura do container */
+    max-width: 320px; /* Define uma largura máxima para não ficarem muito grandes em telas largas */
+    
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito de hover para os botões */
+.btn:hover {
+    background-color: #ffffff;
+    color: #111111;
+}
+
+.btn i {
+    font-size: 1.1rem;
+}
